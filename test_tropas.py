@@ -1,4 +1,5 @@
 import unittest
+from tropas import Soldado
 
 class TestSoldado(unittest.TestCase):
 
