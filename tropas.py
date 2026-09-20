@@ -13,3 +13,7 @@ class Tropa(ABC):
 class Soldado(Tropa):
        def __init__(self):
               super().__init__(1)
+
+class Tanque(Tropa):
+       def __init__(self):
+              super().__init__(2)
