@@ -29,5 +29,25 @@ class TestTanque(unittest.TestCase):
         tanque.recibir_disparo()
         self.assertFalse(tanque.esta_vivo())
 
+class TestBuque(unittest.TestCase):
+
+    def test_buque_inicia_vivo(self):
+        buque = Buque()
+        self.assertTrue(buque.esta_vivo())
+
+    def test_buque_sobrevive_dos_disparos(self):
+        buque = Buque()
+        buque.recibir_disparo()
+        buque.recibir_disparo()
+        self.assertTrue(buque.esta_vivo())
+
+    def test_buque_sobrevive_daño_letal(self):
+        buque = Buque()
+        for i in range(3):
+            buque.recibir_disparo()
+        self.assertFalse(buque.esta_vivo())
+
+
+
 if __name__ == '__main__':
     unittest.main()
