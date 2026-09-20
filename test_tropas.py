@@ -1,5 +1,5 @@
 import unittest
-from tropas import Soldado
+from tropas import Soldado, Tanque
 
 class TestSoldado(unittest.TestCase):
 
@@ -12,6 +12,22 @@ class TestSoldado(unittest.TestCase):
         soldado.recibir_disparo()
         self.assertFalse(soldado.esta_vivo())
 
+class TestTanque(unittest.TestCase):
+
+    def test_tanque_inicia_vivo(self):
+        tanque = Tanque()
+        self.assertTrue(tanque.esta_vivo())
+
+    def test_tanque_sobrevive_un_disparo(self):
+        tanque = Tanque()
+        tanque.recibir_disparo()
+        self.assertTrue(tanque.esta_vivo())
+
+    def test_tanque_muere_al_recibir_daño_fatal(self):
+        tanque = Tanque()
+        tanque.recibir_disparo()
+        tanque.recibir_disparo()
+        self.assertFalse(tanque.esta_vivo())
 
 if __name__ == '__main__':
     unittest.main()
