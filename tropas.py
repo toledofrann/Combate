@@ -17,3 +17,7 @@ class Soldado(Tropa):
 class Tanque(Tropa):
        def __init__(self):
               super().__init__(2)
+
+class Buque(Tropa):
+       def __init__(self):
+              super().__init__(3)
