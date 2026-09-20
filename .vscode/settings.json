@@ -1,6 +1,0 @@
-{
-    "files.associations": {
-        "*.hs": "haskell",
-        "plyconfig.json": "jsonc"
-    }
-}
