@@ -65,6 +65,16 @@ class TestBuque(unittest.TestCase):
             buque.recibir_disparo()
         self.assertFalse(buque.esta_vivo())
 
+    def test_buque_sobrevive_a_disparo_con_escudo(self):
+        buque1 = Buque()
+        buque2 = Buque()
+
+        escudo = Escudo(0.5)
+
+        buque1.equipar_escudo(escudo)
+        buque2.disparar(buque1)
+        self.assertTrue(buque1.esta_vivo())
+
 
 
 if __name__ == '__main__':
