@@ -10,6 +10,9 @@ class Tropa(ABC):
     def recibir_disparo(self):
             self.vida -= 1
 
+    def disparar(self, objetivo):
+           objetivo.recibir_disparo()
+
 class Soldado(Tropa):
        def __init__(self):
               super().__init__(1)
