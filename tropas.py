@@ -5,7 +5,7 @@ class Tropa(ABC):
             self.vida = vida
     
     def esta_vivo(self):
-            return self.vida != 0
+            return self.vida > 0
     
     def recibir_disparo(self, danio=1):
             self.vida -= danio
