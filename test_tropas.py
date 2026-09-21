@@ -18,6 +18,12 @@ class TestSoldado(unittest.TestCase):
         soldado.disparar(tanque)
         self.assertTrue(tanque.esta_vivo())
 
+    def test_soldado_muere_ante_daño_excesivo(self):
+        soldado = Soldado()
+        tanque = Tanque()
+        tanque.disparar(soldado)
+        self.assertFalse(soldado.esta_vivo())
+
 class TestTanque(unittest.TestCase):
 
     def test_tanque_inicia_vivo(self):
