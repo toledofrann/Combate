@@ -1,5 +1,5 @@
 import unittest
-from tropas import Soldado, Tanque, Buque
+from tropas import Soldado, Tanque, Buque, Escudo
 
 class TestSoldado(unittest.TestCase):
 
@@ -23,6 +23,7 @@ class TestSoldado(unittest.TestCase):
         tanque = Tanque()
         tanque.disparar(soldado)
         self.assertFalse(soldado.esta_vivo())
+        
 
 class TestTanque(unittest.TestCase):
 

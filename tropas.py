@@ -3,12 +3,19 @@ from abc import ABC, abstractmethod
 class Tropa(ABC):
     def __init__(self, vida):
             self.vida = vida
+            self.escudo = None
     
     def esta_vivo(self):
             return self.vida > 0
     
     def recibir_disparo(self, danio=1):
-            self.vida -= danio
+            if self.escudo is not None:
+                   self.vida -= danio * self.escudo.porcentaje
+            else:
+                self.vida -= danio
+
+    def equipar_escudo(self, escudo):
+           self.escudo = escudo
 
     @abstractmethod
     def disparar(self, objetivo):
@@ -32,3 +39,8 @@ class Buque(Tropa):
               super().__init__(3)
        def disparar(self, objetivo):
               objetivo.recibir_disparo(3)
+
+class Escudo():
+       def __init__(self, porcentaje):
+              self.porcentaje = porcentaje
+              
