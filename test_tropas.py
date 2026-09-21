@@ -35,6 +35,12 @@ class TestTanque(unittest.TestCase):
         tanque.recibir_disparo()
         self.assertFalse(tanque.esta_vivo())
 
+    def test_tanque_mata_a_tanque(self):
+        tanque1 = Tanque()
+        tanque2 = Tanque()
+        tanque1.disparar(tanque2)
+        self.assertFalse(tanque2.esta_vivo())
+
 class TestBuque(unittest.TestCase):
 
     def test_buque_inicia_vivo(self):
