@@ -10,7 +10,7 @@ class Tropa(ABC):
     
     def recibir_disparo(self, danio=1):
             if self.escudo is not None:
-                   self.vida -= danio * self.escudo.porcentaje
+                   self.vida -= (danio -(danio * self.escudo.porcentaje))
             else:
                 self.vida -= danio
 
