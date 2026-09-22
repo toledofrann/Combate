@@ -24,6 +24,19 @@ class TestSoldado(unittest.TestCase):
         tanque.disparar(soldado)
         self.assertFalse(soldado.esta_vivo())
         
+    def test_soldado_recibe_correctamente_daño(self):
+            soldado = Soldado()
+            tanque = Tanque()
+    
+            escudo = Escudo(0.2)
+    
+            soldado.equipar_escudo(escudo)
+            tanque.disparar(soldado)
+    
+            #Si el tanque hace 2 de daño y el escudo bloque el 0.2 (0.4 de daño bloqueado), el soldado 
+            #deberia recibir 1.6 de daño y morir
+            self.assertFalse(soldado.esta_vivo())
+       
 
 class TestTanque(unittest.TestCase):
 
